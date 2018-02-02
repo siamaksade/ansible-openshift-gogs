@@ -1,7 +1,7 @@
 Ansible Role: Gogs Git Server on OpenShift
 =========
 
-Ansible Role for Deploying Gogs Git Server on OpenShift. This role creates an admin 
+Ansible Role for deploying Gogs Git Server on OpenShift. This role creates an admin 
 account, a user account and also if configured would generate the specified number of user 
 accounts for Gogs.
 
@@ -9,7 +9,7 @@ accounts for Gogs.
 Role Variables
 ------------
 
-|Variable                   | Default Value   | Description   |
+| Variable                  | Default Value   | Description   |
 |---------------------------|-----------------|---------------|
 |`gogs_image_version`       | 0.11.29         | Gogs image version as available on [Docker Hub](https://hub.docker.com/r/openshiftdemos/gogs/tags/) |
 |`gogs_route`               | gogs-{{ project_name }}.127.0.0.1.nip.io | **Required**. Gogs hostname to be configure |
