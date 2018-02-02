@@ -1,4 +1,5 @@
 Ansible Role: Gogs Git Server on OpenShift
+[![Build Status](https://travis-ci.org/siamaksade/ansible-openshift-gogs.svg?branch=master)](https://travis-ci.org/siamaksade/ansible-openshift-gogs)
 =========
 
 Ansible Role for deploying Gogs Git Server on OpenShift. This role creates an admin 
