@@ -34,7 +34,7 @@ name: Example Playbook
 hosts: localhost
 tasks:
 - import_role:
-    name: openshift_gogs
+    name: siamaksade.openshift_gogs
   vars:
     gogs_route: "gogs-cicd-project.apps.myopenshift.com"
     project_name: "cicd-project"
