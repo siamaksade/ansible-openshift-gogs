@@ -36,7 +36,8 @@ tasks:
 - import_role:
     name: openshift_gogs
   vars:
-    project_name: "cicd_project"
+    gogs_route: "gogs-cicd-project.apps.myopenshift.com"
+    project_name: "cicd-project"
     gogs_generate_user_count: "50"
     openshift_cli: "oc --server http://master:8443"
 ```
