@@ -7,7 +7,7 @@
         --param=GOGS_VERSION={{ gogs_image_version }} \
         --param=SKIP_TLS_VERIFY=true \
         -n {{ project_name }}
-  when: not ephemeral
+  when: not ephemeral|bool
 
 - name: deploy gogs from template (ephemeral)
   shell: |
@@ -16,7 +16,7 @@
         --param=GOGS_VERSION={{ gogs_image_version }} \
         --param=SKIP_TLS_VERIFY=true \
         -n {{ project_name }}
-  when: ephemeral
+  when: ephemeral|bool
 
 - name: wait for gogs postgresql to be running
   uri:
