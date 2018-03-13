@@ -23,3 +23,4 @@ gogs_deploy_retry_delay: 30
 gogs_deploy_retry_count: 10
 
 ephemeral: false
+clean_deploy: false # remove existing gogs container

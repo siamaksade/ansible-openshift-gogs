@@ -20,6 +20,7 @@ Role Variables
 |`gogs_password`            | developer       | User account password |
 |`gogs_generate_user_count` | 0               | Number of users accounts to generate with the user account password |
 |`gogs_generate_user_format`| user%02d        | [printf style format](https://en.wikipedia.org/wiki/Printf_format_string) to use for generating user accounts |
+|`clean_install`            | false           | Deploy a fresh Gogs and delete the existing one if any |
 |`project_name`             | gogs            | OpenShift project name for the Gogs container  |
 |`project_display_name`     | Gogs            | OpenShift project display name for the Gogs container  |
 |`project_desc`             | Gogs Git Server | OpenShift project description for the Gogs container |
