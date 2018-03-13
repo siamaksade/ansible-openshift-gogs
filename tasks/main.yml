@@ -37,8 +37,16 @@
   ignore_errors: true
   changed_when: false
 
+- name: remove existing gogs if clean deploy requested
+  shell: |
+    {{ openshift_cli }} delete all,cm,pvc -l app=gogs -n {{ project_name }}
+    {{ openshift_cli }} delete sa gogs -n {{ project_name }}
+  when: 
+    - install_gogs|succeeded 
+    - clean_install|bool
+
 - import_tasks: deploy.yml
-  when: install_gogs | failed
+  when: clean_install|bool or install_gogs|failed
 
 # create gogs users
 - import_tasks: create_users.yml
