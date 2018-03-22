@@ -12,7 +12,7 @@
   shell: "{{ openshift_cli }} new-project {{ project_name }} --display-name='{{ project_display_name }}' --description='{{ project_desc }}'"
   when: gogs_project_result|failed
 
-- name: assign user {{ project_admin }} as project admin in {{ project_name }}
+- name: assign user as project admin
   shell: "oc adm policy add-role-to-user admin {{ project_admin }} -n {{ project_name }}"
   ignore_errors: true
   when: >
