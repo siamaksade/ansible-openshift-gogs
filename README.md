@@ -24,6 +24,7 @@ Role Variables
 |`project_name`             | gogs            | OpenShift project name for the Gogs container  |
 |`project_display_name`     | Gogs            | OpenShift project display name for the Gogs container  |
 |`project_desc`             | Gogs Git Server | OpenShift project description for the Gogs container |
+|`project_admin`            | -               | If set, the user to be assigned as project admin |
 |`project_annotations`      | -               | OpenShift project annotations for the Gogs container |
 |`openshift_cli`            | oc              | OpenShift CLI command and arguments (e.g. auth)       | 
 
