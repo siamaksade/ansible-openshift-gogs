@@ -12,6 +12,7 @@ Role Variables
 
 | Variable                  | Default Value   | Description   |
 |---------------------------|-----------------|---------------|
+|`gogs_service_name`        | gogs            | Gogs service name on OpenShift  |
 |`gogs_image_version`       | 0.11.29         | Gogs image version as available on [Docker Hub](https://hub.docker.com/r/openshiftdemos/gogs/tags/) |
 |`gogs_route`               | gogs-{{ project_name }}.127.0.0.1.nip.io | **Required**. Gogs hostname to be configure |
 |`gogs_admin_user`          | gogs            | Admin account username |
@@ -20,6 +21,10 @@ Role Variables
 |`gogs_password`            | developer       | User account password |
 |`gogs_generate_user_count` | 0               | Number of users accounts to generate with the user account password |
 |`gogs_generate_user_format`| user%02d        | [printf style format](https://en.wikipedia.org/wiki/Printf_format_string) to use for generating user accounts |
+|`max_mem`                  | 2Gi             | Max memory allocated to Gogs container |
+|`min_mem`                  | 512Mi           | Min memory allocated to Gogs container |
+|`max_cpu`                  | 1               | Max cpu allocated to Gogs container |
+|`min_cpu`                  | 200m            | Min cpu allocated to Gogs container |
 |`clean_deploy`             | false           | Deploy a fresh Gogs and delete the existing one if any |
 |`project_name`             | gogs            | OpenShift project name for the Gogs container  |
 |`project_display_name`     | Gogs            | OpenShift project display name for the Gogs container  |

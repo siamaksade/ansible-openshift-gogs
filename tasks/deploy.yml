@@ -5,7 +5,8 @@
     {{ openshift_cli }} new-app -f https://raw.githubusercontent.com/OpenShiftDemos/gogs-openshift-docker/master/openshift/gogs-persistent-template.yaml \
         --param=HOSTNAME={{ gogs_route }} \
         --param=GOGS_VERSION={{ gogs_image_version }} \
-        --param=SKIP_TLS_VERIFY=true \
+        --param=SKIP_TLS_VERIFY={{ skip_tls_verify }} \
+        --param=APPLICATION_NAME={{ gogs_service_name }} \
         -n {{ project_name }}
   when: not ephemeral|bool
 
@@ -14,9 +15,13 @@
     {{ openshift_cli }} new-app -f https://raw.githubusercontent.com/OpenShiftDemos/gogs-openshift-docker/master/openshift/gogs-template.yaml \
         --param=HOSTNAME={{ gogs_route }} \
         --param=GOGS_VERSION={{ gogs_image_version }} \
-        --param=SKIP_TLS_VERIFY=true \
+        --param=SKIP_TLS_VERIFY={{ skip_tls_verify }} \
+        --param=APPLICATION_NAME={{ gogs_service_name }} \
         -n {{ project_name }}
   when: ephemeral|bool
+
+- name: set cpu and mem 
+  shell: "{{ openshift_cli }} set resources dc/{{ gogs_service_name }} --limits=cpu={{ max_cpu }},memory={{ max_mem }} --requests=cpu={{ min_cpu }},memory={{ min_mem }} -n {{ project_name }}"
 
 - name: wait for gogs postgresql to be running
   uri:
