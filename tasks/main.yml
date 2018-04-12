@@ -32,15 +32,15 @@
 
 # install gogs
 - name: check if gogs exists
-  shell: "{{ openshift_cli }} get service gogs -n {{ project_name }}"
+  shell: "{{ openshift_cli }} get service {{ gogs_service_name }} -n {{ project_name }}"
   register: install_gogs
   ignore_errors: true
   changed_when: false
 
 - name: remove existing gogs if clean deploy requested
   shell: |
-    {{ openshift_cli }} delete all,cm,pvc -l app=gogs -n {{ project_name }}
-    {{ openshift_cli }} delete sa gogs -n {{ project_name }}
+    {{ openshift_cli }} delete all,cm,pvc -l app={{ gogs_service_name }} -n {{ project_name }}
+    {{ openshift_cli }} delete sa {{ gogs_service_name }} -n {{ project_name }}
   when: 
     - install_gogs|succeeded 
     - clean_deploy|bool

@@ -24,3 +24,12 @@ gogs_deploy_retry_count: 10
 
 ephemeral: false
 clean_deploy: false # remove existing gogs container
+
+gogs_service_name: gogs
+
+skip_tls_verify: true
+
+max_mem: 512Mi
+min_mem: 128Mi
+max_cpu: 400m
+min_cpu: 100m
