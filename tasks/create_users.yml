@@ -9,7 +9,7 @@
       Content-Type: "application/x-www-form-urlencoded"
     status_code: 302,200
 
-- name: check if user '{{ gogs_admin_user }}' exists
+- name: check if user '{{ gogs_user }}' exists
   uri:
     url: http://{{ gogs_route }}/api/v1/users/{{ gogs_user }}
     user: "{{ gogs_admin_user }}"
@@ -18,7 +18,7 @@
     status_code: 200,404
   register: user_result
 
-- name: create gogs user '{{ gogs_admin_user }}'
+- name: create gogs user '{{ gogs_user }}'
   uri:
     url: http://{{ gogs_route }}/api/v1/admin/users
     method: POST
