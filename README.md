@@ -33,6 +33,27 @@ Role Variables
 |`project_annotations`      | -               | OpenShift project annotations for the Gogs container |
 |`openshift_cli`            | oc              | OpenShift CLI command and arguments (e.g. auth)       | 
 
+OpenShift Version Compatibility
+------------
+When listing this role in `requirements.yml`, make sure to pin the version of the role via one of the tags:
+
+```
+- src: siamaksade.openshift_gogs
+  version: 1.3.0
+```  
+
+The following tables shows the version combinations that are tested and verified:
+
+| Role Version      | OpenShift Version |
+|-------------------|-------------------|
+| 1.0.x   | 3.7.x   |
+| 1.1.x   | 3.9.x   |
+| 1.2.x   | 3.10.x  |
+| 1.3.x   | 3.11.x  |
+
+Note that if a version combination is not listed above, it does **NOT** mean that the latest role version 
+won't work on that OpensShift version. The above table is merely the combinations that we have tested and verified.
+
 
 Example Playbook
 ------------
