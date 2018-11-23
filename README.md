@@ -39,7 +39,7 @@ When listing this role in `requirements.yml`, make sure to pin the version of th
 
 ```
 - src: siamaksade.openshift_gogs
-  version: 1.3.0
+  version: 1.1.0
 ```  
 
 The following tables shows the version combinations that are tested and verified:
