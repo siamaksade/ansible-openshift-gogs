@@ -7,6 +7,7 @@
         --param=GOGS_VERSION={{ gogs_image_version }} \
         --param=SKIP_TLS_VERIFY={{ skip_tls_verify }} \
         --param=APPLICATION_NAME={{ gogs_service_name }} \
+        --param=DATABASE_VERSION={{ gogs_database_version }} \
         -n {{ project_name }}
   when: not ephemeral|bool
 

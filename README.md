@@ -21,6 +21,7 @@ Role Variables
 |`gogs_password`            | developer       | User account password |
 |`gogs_generate_user_count` | 0               | Number of users accounts to generate with the user account password |
 |`gogs_generate_user_format`| user%02d        | [printf style format](https://en.wikipedia.org/wiki/Printf_format_string) to use for generating user accounts |
+|`gogs_database_version`    | 9.6             | Postgresql version used for gogs persistent template |
 |`max_mem`                  | 2Gi             | Max memory allocated to Gogs container |
 |`min_mem`                  | 512Mi           | Min memory allocated to Gogs container |
 |`max_cpu`                  | 1               | Max cpu allocated to Gogs container |
@@ -48,6 +49,7 @@ The following tables shows the version combinations that are tested and verified
 |-------------------|-------------------|
 | 1.0.x   | 3.7.x   |
 | 1.1.x   | 3.9.x, 3.10.x, 3.11.x |
+| 1.2.x   | 4.1.x, 4.2.x |
 
 Note that if a version combination is not listed above, it does **NOT** mean that the latest role version 
 won't work on that OpensShift version. The above table is merely the combinations that we have tested and verified.
